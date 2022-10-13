@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:icon="@drawable/icono_suma"
+            android:title="Suma"
+            android:id="@+id/nav_suma"/>
+        <item android:icon="@drawable/icono_imagen"
+            android:title="Galería"
+            android:id="@+id/nav_galeria"/>
+        <item android:icon="@drawable/icono_cambiar_colo"
+            android:title="Cambiar Color"
+            android:id="@+id/nav_cambio_color_texto"/>
+        <item android:id="@+id/nav_modificar_tamaño"
+            android:title="Modificar Tamaño"
+            android:icon="@drawable/icono_size_letra_24"/>
+
+    </group>
+</menu>
