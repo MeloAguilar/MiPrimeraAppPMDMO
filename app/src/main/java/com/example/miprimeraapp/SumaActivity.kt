@@ -2,6 +2,7 @@ package com.example.miprimeraapp
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.example.miprimeraapp.databinding.ActivitySumaBinding
@@ -16,14 +17,18 @@ class SumaActivity : PintorMenuActivity() {
         activitySumaBinding = ActivitySumaBinding.inflate(layoutInflater)
         setContentView(activitySumaBinding.root)
         allocateActivityTitle("Suma")
+        val btn : Button = findViewById(R.id.btnSuma)
+        btn?.setOnClickListener {
+            sumar()
+        }
     }
 
-    fun sumar(view: View) {
-        val num1 : EditText = findViewById(R.id.num_suma_1)
+    fun sumar() {
+        val num1 = findViewById<EditText>(R.id.num_suma_1)
         val num2 : EditText = findViewById(R.id.num_suma_2)
-        val resultado = (num1.text.toString().toDouble()) + (num2.text.toString().toDouble())
-        val textView : TextView = findViewById<TextView>(R.id.txtResultado)
+        val resultado : Double = (num1.text.toString().toDouble()) + (num2.text.toString().toDouble())
+        val textView = findViewById<TextView>(R.id.txtResultado)
         textView.text = "Resultado: $resultado"
-
     }
+
 }

@@ -48,6 +48,7 @@ open class PintorMenuActivity : AppCompatActivity(), NavigationView.OnNavigation
             }
             R.id.nav_modificar_tamaño -> {
                 startActivity(Intent(this, AgrandarTextoActivity::class.java))
+                overridePendingTransition(0,0)
             }
             }
         return false
