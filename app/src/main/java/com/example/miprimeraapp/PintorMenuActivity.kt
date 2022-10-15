@@ -6,7 +6,6 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.FrameLayout
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.appbar.MaterialToolbar
@@ -16,25 +15,40 @@ open class PintorMenuActivity : AppCompatActivity(), NavigationView.OnNavigation
 
    lateinit var layoutPintor : DrawerLayout
 
+
+    /**
+     *
+     */
     override fun setContentView(view: View?) {
+        //
         layoutPintor = layoutInflater.inflate(R.layout.activity_pintor_menu, null) as DrawerLayout
+
+        //Recogemos el container donde se mostrarán las páginas
         val container:FrameLayout = layoutPintor.findViewById(R.id.contenedor_actividad)
+        //Añadimos la vista que nos llega del parámetro al container
         container.addView(view)
         super.setContentView(layoutPintor)
+        //Recogemos la barra de la app y la establecemos como nuestra barra de apoyo
         val barra : MaterialToolbar = layoutPintor.findViewById(R.id.barra_app)
         setSupportActionBar(barra)
+        //Recogemos tambien nuestro NavigationView, que será la máscara de nuestro menú
         val navView : NavigationView = layoutPintor.findViewById(R.id.navigation_view)
         navView.setNavigationItemSelectedListener(this)
 
+        //Declaramos un ActionBarDrawerToggle y le daremos la actividad en la que nos encontramos,
+        // el container, la barra y dos acciones para abrir y cerrar este pintor.
         val toggle : ActionBarDrawerToggle = ActionBarDrawerToggle(this, layoutPintor, barra,
                     R.string.menu_drawer_open, R.string.meu_drawer_close)
+        //le damos el toggle al layout para que lo pinte como debe
         layoutPintor.addDrawerListener(toggle)
          toggle.syncState()
     }
 
 
-
-
+    /**
+     * Función que se encarga de distribuir que actividad se lanzará cuando se pulse
+     * uno de los items del menu del navigationView
+     */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         layoutPintor.closeDrawer(GravityCompat.START)
         when(item.itemId){
@@ -46,8 +60,24 @@ open class PintorMenuActivity : AppCompatActivity(), NavigationView.OnNavigation
                 startActivity(Intent(this, GaleriaActivity::class.java))
                 overridePendingTransition(0,0)
             }
-            R.id.nav_modificar_tamaño -> {
-                startActivity(Intent(this, AgrandarTextoActivity::class.java))
+            R.id.nav_checkboxes -> {
+                startActivity(Intent(this, CheckBoxesActivity::class.java))
+                overridePendingTransition(0,0)
+            }
+            R.id.nav_cambio_color_texto -> {
+                startActivity(Intent(this, CambioColorActivity::class.java))
+                overridePendingTransition(0,0)
+            }
+            R.id.nav_alinear_texto -> {
+                startActivity(Intent(this, AlinearText::class.java))
+                overridePendingTransition(0,0)
+            }
+            R.id.nav_modificar_tam -> {
+                startActivity(Intent(this, CambiarSizeLetraActivity::class.java))
+                overridePendingTransition(0,0)
+            }
+            R.id.nav_volumen -> {
+                startActivity(Intent(this, SuprimirVolumenActivity::class.java))
                 overridePendingTransition(0,0)
             }
             }
@@ -55,18 +85,30 @@ open class PintorMenuActivity : AppCompatActivity(), NavigationView.OnNavigation
         }
 
 
-
+    /**
+     * Método que se encarga de cambiar el título cada página
+     * que aparece en la barra de la app
+     */
     protected fun allocateActivityTitle(tituloString : String)
     {
-        if(getSupportActionBar() != null){
-            getSupportActionBar()?.setTitle(tituloString)
+        if(supportActionBar != null){
+            supportActionBar?.title = tituloString
         }
     }
 
+
+    /**
+     * Función que se encarga de ir al inicio cuando se pulsa
+     */
     fun irAInicio(view: View)
     {
-        startActivity(Intent(this, BarraAppActivity::class.java))
+
+        startActivity(Intent(this, InicioAcivity::class.java))
         overridePendingTransition(0,0)
+    }
+
+    fun cerrarNavView(view : View){
+        layoutPintor.closeDrawer(GravityCompat.START)
     }
 
 }

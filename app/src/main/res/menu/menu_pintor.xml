@@ -7,12 +7,27 @@
         <item android:icon="@drawable/icono_imagen"
             android:title="Galería"
             android:id="@+id/nav_galeria"/>
-        <item android:icon="@drawable/icono_cambiar_colo"
-            android:title="Cambiar Color"
-            android:id="@+id/nav_cambio_color_texto"/>
-        <item android:id="@+id/nav_modificar_tamaño"
-            android:title="Modificar Tamaño"
-            android:icon="@drawable/icono_size_letra_24"/>
+        <item android:icon="@drawable/volume_up"
+            android:title="Volumen"
+            android:id="@+id/nav_volumen"/>
 
     </group>
+<item android:id="@+id/nav_text"
+    android:title="Modificar Texto">
+    <menu>
+
+        <item android:icon="@drawable/icono_cambiar_colo"
+            android:title="Color"
+            android:id="@+id/nav_cambio_color_texto"/>
+        <item android:id="@+id/nav_checkboxes"
+            android:title="Diversos"
+            android:icon="@drawable/icono_size_letra_24"/>
+        <item android:id="@+id/nav_alinear_texto"
+            android:icon="@drawable/align"
+            android:title="Alineacion"/>
+        <item android:id="@+id/nav_modificar_tam"
+            android:title="Tamaño"
+            android:icon="@drawable/icono_size_letra_24"/>
+    </menu>
+</item>
 </menu>

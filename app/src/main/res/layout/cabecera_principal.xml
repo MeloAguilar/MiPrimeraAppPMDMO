@@ -4,28 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="90dp"
     android:padding="20dp"
-    android:background="@color/purple_200"
+    android:background="@color/color_principal"
     android:orientation="horizontal"
     android:textAlignment="center">
 
     <ImageButton
         android:id="@+id/boton_inicio"
-        android:layout_width="wrap_content"
-        android:layout_height="66dp"
-        android:background="#BA85FB"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/color_principal"
         android:contextClickable="true"
+        android:onClick="cerrarNavView"
+        android:rotation="180"
         android:scaleType="centerInside"
-        android:onClick="irAInicio"
-        android:src="@drawable/icono_menu"/>
+        android:src="@drawable/icono_back" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="194dp"
         android:layout_height="71dp"
         android:padding="23dp"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:text="MI PRIMERA APP"
-        android:textColor="@color/white"
         android:textStyle="bold" />
 
 

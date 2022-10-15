@@ -7,13 +7,47 @@
     android:orientation="vertical"
     tools:context=".GaleriaActivity">
 
-    <!--on below line we are adding view pager -->
+    <!--Aquí añadimos el viewPager -->
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/idViewPager"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_centerInParent="true"
         android:layout_gravity="center"
-        android:layout_margin="10dp" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp" />
+
+    <!--Aqui los botones para avanzar y volver a la foto anterior-->
+    <Button
+        android:id="@+id/btnAnterior"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="Anterior"
+        android:backgroundTint="@color/color_principal"
+        android:layout_below="@+id/idViewPager"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="235dp"
+        android:layout_marginBottom="60dp" />
+
+    <Button
+        android:id="@+id/btnSiguiente"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:text="Siguiente"
+        android:layout_below="@+id/idViewPager"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="235dp"
+        android:layout_marginTop="80dp"
+        android:backgroundTint="@color/color_principal"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="60dp" />
 
 </RelativeLayout>

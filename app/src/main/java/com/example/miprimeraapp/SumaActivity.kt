@@ -16,13 +16,20 @@ class SumaActivity : PintorMenuActivity() {
         super.onCreate(savedInstanceState)
         activitySumaBinding = ActivitySumaBinding.inflate(layoutInflater)
         setContentView(activitySumaBinding.root)
+        overridePendingTransition(0,0)
         allocateActivityTitle("Suma")
         val btn : Button = findViewById(R.id.btnSuma)
+        val resultado : TextView = findViewById(R.id.txtResultado)
         btn?.setOnClickListener {
             sumar()
         }
     }
 
+
+    /**
+     * Funcion que se encarga de recoger los dos EditText que se en cuentran en el layout
+     * parsea el string a Double y realiza la suma, después lo muestra en el TextView "resultado"
+     */
     fun sumar() {
         val num1 = findViewById<EditText>(R.id.num_suma_1)
         val num2 : EditText = findViewById(R.id.num_suma_2)
