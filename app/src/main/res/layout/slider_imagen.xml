@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--on below line we are creating an image view-->
+    <!--Aquí crearemos la ImageView que hará de contenedor de imagenes-->
     <ImageView
         android:id="@+id/idIVImage"
         android:layout_width="match_parent"

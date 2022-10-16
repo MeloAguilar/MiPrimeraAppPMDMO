@@ -8,6 +8,10 @@ class InicioAcivity : PintorMenuActivity() {
 
     lateinit var bindingBarraApp : ActivityInicioBinding
 
+    /**
+     * Página de Inicio de la App.
+     * Está vacía porque no encuentro la inspiración para un inicio
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingBarraApp = ActivityInicioBinding.inflate(layoutInflater)

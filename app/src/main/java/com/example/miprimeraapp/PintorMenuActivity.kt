@@ -17,10 +17,12 @@ open class PintorMenuActivity : AppCompatActivity(), NavigationView.OnNavigation
 
 
     /**
+     * Funcion que sobreescribe el método setContentView(view: View?)
      *
+     * Se encarga de recoger la barra de la app, el menu, el NavigationView y el layout que se mostrará
+     * en la actividad que corresponda
      */
     override fun setContentView(view: View?) {
-        //
         layoutPintor = layoutInflater.inflate(R.layout.activity_pintor_menu, null) as DrawerLayout
 
         //Recogemos el container donde se mostrarán las páginas
@@ -86,7 +88,7 @@ open class PintorMenuActivity : AppCompatActivity(), NavigationView.OnNavigation
 
 
     /**
-     * Método que se encarga de cambiar el título cada página
+     * Función que se encarga de cambiar el título cada página
      * que aparece en la barra de la app
      */
     protected fun allocateActivityTitle(tituloString : String)
@@ -96,17 +98,10 @@ open class PintorMenuActivity : AppCompatActivity(), NavigationView.OnNavigation
         }
     }
 
-
     /**
-     * Función que se encarga de ir al inicio cuando se pulsa
+     * Función que sirve para, cuando está el navView abierto, poder cerrarlo
+     * pulsando el boton "back"
      */
-    fun irAInicio(view: View)
-    {
-
-        startActivity(Intent(this, InicioAcivity::class.java))
-        overridePendingTransition(0,0)
-    }
-
     fun cerrarNavView(view : View){
         layoutPintor.closeDrawer(GravityCompat.START)
     }

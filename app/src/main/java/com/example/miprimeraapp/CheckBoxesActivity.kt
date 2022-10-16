@@ -20,6 +20,9 @@ class CheckBoxesActivity : PintorMenuActivity() {
         activityAgrandarTextoBinding = ActivityCheckBoxesBinding.inflate(layoutInflater)
         setContentView(activityAgrandarTextoBinding.root)
         allocateActivityTitle("Diversos")
+
+
+        //Declaro e instancio el boton de reinicio, los radio y el texto que escribirá el usuario
         val texto: EditText = findViewById(R.id.txtModificar)
         val btnAgrandar: RadioButton = findViewById(R.id.btnLetraGigante)
         val btnDisminuir: RadioButton = findViewById(R.id.btnLetraMinuscula)
@@ -27,18 +30,22 @@ class CheckBoxesActivity : PintorMenuActivity() {
         val btnRojo: RadioButton = findViewById(R.id.btnColorRojo)
         val btnReiniciar : Button = findViewById(R.id.btnReiniciar)
 
+        //Establezco que si los radio no estan seleccionados estos se seleccionen y
         btnAgrandar?.setOnClickListener {
             if (!btnAgrandar.isSelected) {
+                btnAgrandar.isSelected = true
                 texto.setTextSize(TypedValue.COMPLEX_UNIT_SP, 100F)
             }
         }
             btnDisminuir?.setOnClickListener {
                 if (!btnDisminuir.isSelected) {
+                    btnDisminuir.isSelected = true
                     texto.setTextSize(TypedValue.COMPLEX_UNIT_SP, 5F)
                 }
             }
         btnRojo?.setOnClickListener {
             if (!btnRojo.isSelected) {
+                btnRojo.isSelected = true
                 texto.setTextColor(Color.RED)
             }
         }
@@ -46,6 +53,7 @@ class CheckBoxesActivity : PintorMenuActivity() {
 
         btnBold?.setOnClickListener {
             if(!btnBold.isSelected){
+                btnBold.isSelected = true
                 texto.setTypeface(null, Typeface.BOLD)
             }
         }

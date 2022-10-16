@@ -32,7 +32,8 @@
         app:layout_constraintEnd_toStartOf="@+id/btnRojo"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtModificarColor" />
+        app:layout_constraintTop_toBottomOf="@+id/txtModificarColor"
+        android:backgroundTint="@color/color_principal"/>
 
     <Button
         android:id="@+id/btnRojo"
@@ -42,7 +43,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtModificarColor" />
+        app:layout_constraintTop_toBottomOf="@+id/txtModificarColor"
+        android:backgroundTint="@color/color_principal"/>
 
     <Button
         android:id="@+id/btnVerde"
@@ -54,5 +56,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toEndOf="@+id/btnRojo"
-        app:layout_constraintTop_toBottomOf="@+id/txtModificarColor" />
+        app:layout_constraintTop_toBottomOf="@+id/txtModificarColor"
+        android:backgroundTint="@color/color_principal"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
